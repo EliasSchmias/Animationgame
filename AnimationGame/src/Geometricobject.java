@@ -28,6 +28,8 @@ public class Geometricobject {
 		
 	public Geometricobject(Vertex pos){this(0,0,pos);}
 	
+	public Geometricobject(){this(10);}
+	
 	public double getwidth(){return width;};
 		
 	public double getheight(){return height;};
@@ -52,8 +54,21 @@ public class Geometricobject {
 		
 	}
 
-	public void moveTo(Vertex pos){this.pos=pos;}
+	public void moveTo(Vertex pos){this.pos=pos; }
 
-	public void moveTo(double x; double y){
-		moveTo(new Vertex(x,y))}
+	public void moveTo(double x, double y){
+		moveTo(new Vertex(x,y));}
+	
+
+	public void move(Vertex v) {
+		moveTo(pos.add(v));
+	}
+	
+	public boolean equals(Object thatObject){
+		if (thatObject instanceof Geometricobject){
+			Geometricobject that =(Geometricobject)thatObject;
+			
+			return that.width==this.width && this.height ==that.height && this.pos.equals(that.pos);}
+		return false;}
+	
 	}
