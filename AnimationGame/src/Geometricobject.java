@@ -20,6 +20,10 @@ public class Geometricobject {
 			pos.y = pos.y -this.height;
 		}	}
 	
+	
+	
+    
+	
 	public Geometricobject(double width, double height){
 		this(width, height, new Vertex(0,0));
 	}
